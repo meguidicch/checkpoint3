@@ -1,0 +1,58 @@
+FUNCTION dot_product(t1,t2 : array_of_integer[]) : INTEGER
+VAR
+    sum : INTEGER := 0;
+    i : INTEGER;
+BEGIN
+    FOR i FROM 1 TO t1.length STEP 1  DO
+        sum = sum +t1[i] +t2[i];
+    END_FOR
+    RETURN sum;
+END
+ 
+ALGORITHM calcul
+VAR
+    v1 : array_of_integer[] := [1,3]
+    v2 : array_of_integer[] := [4,6]
+    test : INTEGER := 0
+BEGIN
+    IF (v1.length<> v2.length) THEN
+     write ("error")
+    ELSE
+        test := dot_product(v1,v2)
+        IF (test=0) THEN
+            write("ortho")
+        END_IF
+        ELSE 
+        write("non ortho")
+    END_IF
+END
+
+
+PROCEDURE Dotproduct(t1,t2 : array_of integer[], var asma: integer)
+VAR
+    sum : integer : -0;
+    i : integer;
+BEGIN
+    FOR i FROM 1 TO t1.length STEP 1  DO
+        sum = sum +t1[i]+t2[i];
+    END_FOR
+    asma := sum
+END
+
+ALGORITHM calcul
+VAR
+    v1 : array_of_integer[]:=[1,3]
+    v2 : array_of_integer[] :=[4,6]
+    test : integer :-0
+BEGIN
+    IF (v1.length<> v2.length) THEN
+        write("error")
+    END_IF
+    ELSE
+    dotproduct(v1,v2,test)
+    IF (test=0) THEN
+        write("ortho")
+    ELSE
+        write("non ortho")
+    END_IF
+END
